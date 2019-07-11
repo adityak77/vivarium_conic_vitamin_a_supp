@@ -2,7 +2,10 @@
 vivarium_conic_vitamin_a_supp
 ===============================
 
-Research repository for the vivarium_conic_vitamin_a_supp project.
+Research repository for work on vitamin A supplementation for the purposes of the
+Conic grant. The work is being done by Aditya Kannan during July and August of 2019. 
+The scope is to complete a vitamin A supplementation model that includes cost
+estimation. Vitamin A fortifcation will be included if time permits.
 
 .. contents::
    :depth: 1
@@ -10,8 +13,7 @@ Research repository for the vivarium_conic_vitamin_a_supp project.
 Model Documentation Resources
 -----------------------------
 
-**You should put links to the concept model documentation and any other**
-**relevant documentation here.**
+TBD.
 
 Installation
 ------------
