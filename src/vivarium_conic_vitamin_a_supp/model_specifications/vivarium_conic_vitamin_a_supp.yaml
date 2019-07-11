@@ -33,7 +33,7 @@ configuration:
     input_data:
         location: Nigeria
         input_draw_number: 0
-        artifact_path: /share/scratch/users/dtsoi/vivarium_artifacts/vitamin_a_supplementation/vitamin_a_min.hdf
+        artifact_path: /share/costeffectiveness/artifacts/vivarium_conic_vitamin_a_supp/vivarium_conic_vitamin_a_supp.hdf 
     interpolation:
         order: 0
         extrapolate: True
