@@ -27,6 +27,7 @@ components:
             - CategoricalRiskObserver('risk_factor.vitamin_a_deficiency')
     vivarium_conic_vitamin_a_supp.components:
         - MagicWandSupplementationInterventionStepWise()
+        - SupplementedDaysObserver()
 
 
 configuration:
@@ -78,3 +79,7 @@ configuration:
             by_age: False
             by_sex: False
             by_year: True
+        supplemented_days:
+            by_age: False
+            by_sex: False
+            by_year: False
