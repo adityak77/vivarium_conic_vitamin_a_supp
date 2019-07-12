@@ -32,7 +32,11 @@ class SupplementedDaysObserver:
         self.lack_of_vitamin_a_supplementation = builder.value.get_value("lack_of_vitamin_a_supplementation.exposure")
         self.supplemented_days = Counter()
 
-        columns_required = ['tracked', 'alive', 'age', 'sex']  # TODO: do I care
+        columns_required = ['tracked', 'alive']
+        if self.config.by_age:
+            columns_required += ['age']
+        if self.config.by_sex:
+            columns_required += ['sex']
         self.population_view = builder.population.get_view(columns_required)
 
         builder.event.register_listener('collect_metrics', self.on_collect_metrics)
