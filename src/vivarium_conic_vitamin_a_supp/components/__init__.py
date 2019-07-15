@@ -1,1 +1,3 @@
 from .vitamin_a_supplementation import MagicWandSupplementationInterventionStepWise
+from .observer import SupplementedDaysObserver
+
