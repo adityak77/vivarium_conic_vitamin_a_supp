@@ -10,10 +10,38 @@ estimation. Vitamin A fortifcation will be included if time permits.
 .. contents::
    :depth: 1
 
-Model Documentation Resources
------------------------------
+Model Overiew
+-------------
 
-TBD.
+A general outline of the model is described below. More detailed information
+should be contained in a concept model document which is yet to be created for
+this project.
+
+Population, Causes and Risks
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This vitamin A model considers the risk factor of vitamin A deficiency as well
+as a gap in coverage (we call this a risk factor as well), the lack of vitamin A
+supplementation. It considers the diseases of Measles, diarrheal diseases, and
+lower respiratory infections among those aged zero to five years old.
+
+Roughly, the diseases impact mortality and morbidity in the population. The
+risk factor vitamin A deficiency impacts the incidence rate of each of these
+diseases. The coverage gap impacts the exposure to vitamin A deficiency itself.
+The coverage gap is dichotomous, and can be interpreted as "being supplemented"
+or not.
+
+Intervention
+~~~~~~~~~~~~
+
+The Supplementation intervention is implemented as a "magic wand" that shifts
+exposure to the coverage gap, i.e. lack of vitamin A supplementation, to a new
+value. It does this by calculating an annual step size linearly from the start
+and end years of the simulation and shifting the exposure down on-demand using
+the value system.
+
+This vitamine A supplementation is the explicit goal of this work, but
+fortification remains a stretch goal and thus a possibility.
 
 Installation
 ------------
