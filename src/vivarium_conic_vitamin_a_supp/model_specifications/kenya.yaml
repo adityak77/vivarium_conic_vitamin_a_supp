@@ -32,9 +32,9 @@ components:
 
 configuration:
     input_data:
-        location: Nigeria
+        location: Kenya
         input_draw_number: 0
-        artifact_path: /share/costeffectiveness/artifacts/vivarium_conic_vitamin_a_supp/vivarium_conic_vitamin_a_supp.hdf 
+        artifact_path: /share/costeffectiveness/artifacts/vitamin_a_supp/kenya.hdf 
     interpolation:
         order: 0
         extrapolate: True
