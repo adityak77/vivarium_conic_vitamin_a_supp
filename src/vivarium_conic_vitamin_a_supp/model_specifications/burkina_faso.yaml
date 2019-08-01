@@ -44,11 +44,11 @@ configuration:
         random_seed: 0
     time:
         start:
-            year: 2014
+            year: 2017
             month: 1
             day: 1
         end:
-            year: 2017
+            year: 2023
             month: 12
             day: 31
         step_size: 30  # Days
@@ -58,12 +58,12 @@ configuration:
         age_end: 5
         exit_age: 5
     lack_of_vitamin_a_supplementation:
-        exposure: 0.4
+        exposure: 0.12
         distribution: 'dichotomous'
     vitamin_a_supplementation:
-        target_coverage: 0.8
-        intervention_start_year: 2015
-        intervention_end_year:  2015
+        target_coverage: 0.88
+        intervention_start_year: 2019
+        intervention_end_year:  2023
 
     effect_of_lack_of_vitamin_a_supplementation_on_vitamin_a_deficiency:
         exposure_parameters:
@@ -82,4 +82,4 @@ configuration:
         supplemented_days:
             by_age: False
             by_sex: False
-            by_year: False
+            by_year: True
