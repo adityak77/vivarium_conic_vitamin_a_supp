@@ -51,7 +51,7 @@ configuration:
             year: 2023
             month: 12
             day: 31
-        step_size: 30  # Days
+        step_size: 1  # Days
     population:
         population_size: 10_000
         age_start: 0
