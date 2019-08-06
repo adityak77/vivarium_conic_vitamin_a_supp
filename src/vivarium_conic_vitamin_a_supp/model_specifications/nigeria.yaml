@@ -53,15 +53,15 @@ configuration:
             day: 31
         step_size: 1  # Days
     population:
-        population_size: 1_000
+        population_size: 10_000
         age_start: 0
         age_end: 5
         exit_age: 5
     lack_of_vitamin_a_supplementation:
-        exposure: 1
+        exposure: 0.68
         distribution: 'dichotomous'
     vitamin_a_supplementation:
-        target_coverage: 1
+        target_coverage: 0.66
         intervention_start_year: 2019
         intervention_end_year:  2023
 
@@ -78,7 +78,7 @@ configuration:
         mortality:
             by_age: False
             by_sex: False
-            by_year: True
+            by_year: False
         supplemented_days:
             by_age: False
             by_sex: False

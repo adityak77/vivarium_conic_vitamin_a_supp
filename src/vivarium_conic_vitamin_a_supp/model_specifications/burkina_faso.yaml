@@ -78,7 +78,7 @@ configuration:
         mortality:
             by_age: False
             by_sex: False
-            by_year: True
+            by_year: False
         supplemented_days:
             by_age: False
             by_sex: False
