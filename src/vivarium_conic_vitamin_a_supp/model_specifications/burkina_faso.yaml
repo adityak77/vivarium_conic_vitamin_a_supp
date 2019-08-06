@@ -58,7 +58,7 @@ configuration:
         age_end: 5
         exit_age: 5
     lack_of_vitamin_a_supplementation:
-        exposure: 0.88
+        exposure: 0.12
         distribution: 'dichotomous'
     vitamin_a_supplementation:
         target_coverage: 0.94

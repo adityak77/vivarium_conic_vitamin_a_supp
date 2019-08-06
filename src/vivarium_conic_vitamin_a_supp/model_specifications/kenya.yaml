@@ -58,10 +58,10 @@ configuration:
         age_end: 5
         exit_age: 5
     lack_of_vitamin_a_supplementation:
-        exposure: 0.42
+        exposure: 0.45
         distribution: 'dichotomous'
     vitamin_a_supplementation:
-        target_coverage: 0.79
+        target_coverage: 0.77
         intervention_start_year: 2019
         intervention_end_year:  2023
 
