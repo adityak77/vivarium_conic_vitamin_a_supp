@@ -48,7 +48,7 @@ configuration:
             month: 1
             day: 1
         end:
-            year: 2023
+            year: 2017 # 2023
             month: 12
             day: 31
         step_size: 1  # Days
@@ -61,9 +61,9 @@ configuration:
         exposure: 0.12
         distribution: 'dichotomous'
     vitamin_a_supplementation:
-        target_coverage: 0.94
-        intervention_start_year: 2019
-        intervention_end_year:  2023
+        target_coverage: 0.88 # 0.94
+        intervention_start_year: 2017 # 2019
+        intervention_end_year:  2017 # 2023
 
     effect_of_lack_of_vitamin_a_supplementation_on_vitamin_a_deficiency:
         exposure_parameters:
@@ -72,13 +72,13 @@ configuration:
             tau_squared: 0.072460874
     metrics:
         disability:
-            by_age: False
-            by_sex: False
-            by_year: False
+            by_age: True # False
+            by_sex: True # False
+            by_year: True # False
         mortality:
-            by_age: False
-            by_sex: False
-            by_year: False
+            by_age: True # False
+            by_sex: True # False
+            by_year: True
         supplemented_days:
             by_age: False
             by_sex: False
