@@ -34,7 +34,8 @@ configuration:
     input_data:
         location: Kenya
         input_draw_number: 0
-        artifact_path: /share/costeffectiveness/artifacts/vitamin_a_supp/kenya.hdf 
+#        artifact_path: /share/costeffectiveness/artifacts/vitamin_a_supp/kenya.hdf
+        artifact_path: /Users/akannan/Desktop/IHME/vit_a_artifacts/kenya.hdf
     interpolation:
         order: 0
         extrapolate: True

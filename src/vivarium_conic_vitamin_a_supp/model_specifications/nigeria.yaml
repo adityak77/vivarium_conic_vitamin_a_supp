@@ -24,6 +24,7 @@ components:
         metrics:
             - MortalityObserver()
             - Disability()
+#            - DisabilityObserver()
             - CategoricalRiskObserver('risk_factor.vitamin_a_deficiency')
     vivarium_conic_vitamin_a_supp.components:
         - MagicWandSupplementationInterventionStepWise()
@@ -34,7 +35,8 @@ configuration:
     input_data:
         location: Nigeria
         input_draw_number: 0
-        artifact_path: /share/costeffectiveness/artifacts/vitamin_a_supp/nigeria.hdf 
+        artifact_path: /share/costeffectiveness/artifacts/vitamin_a_supp/nigeria.hdf
+#        artifact_path: /Users/akannan/Desktop/IHME/vit_a_artifacts/nigeria.hdf
     interpolation:
         order: 0
         extrapolate: True
@@ -48,12 +50,12 @@ configuration:
             month: 1
             day: 1
         end:
-            year: 2017 # 2023
+            year: 2023 # 2017
             month: 12
             day: 31
         step_size: 1  # Days
     population:
-        population_size: 10_000
+        population_size: 100_000
         age_start: 0
         age_end: 5
         exit_age: 5
@@ -61,9 +63,9 @@ configuration:
         exposure: 0.68 # GBD: 0.36
         distribution: 'dichotomous'
     vitamin_a_supplementation:
-        target_coverage: 0.32 # Intervention: 0.66
-        intervention_start_year: 2017 # 2019
-        intervention_end_year: 2017 # 2023
+        target_coverage: 0.32 # Intervention: 0.66 Baseline: 0.32
+        intervention_start_year: 2019 # 2017
+        intervention_end_year: 2023 # 2017
 
     effect_of_lack_of_vitamin_a_supplementation_on_vitamin_a_deficiency:
         exposure_parameters:
@@ -72,12 +74,12 @@ configuration:
             tau_squared: 0.072460874
     metrics:
         disability:
-            by_age: True # False
-            by_sex: True # False
+            by_age: False
+            by_sex: False
             by_year: True # False
         mortality:
-            by_age: True # False
-            by_sex: True # False
+            by_age: False
+            by_sex: False
             by_year: True
         supplemented_days:
             by_age: False

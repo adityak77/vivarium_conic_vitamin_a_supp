@@ -1,0 +1,87 @@
+plugins:
+    optional:
+        data:
+            controller: "vivarium_public_health.dataset_manager.ArtifactManager"
+            builder_interface: "vivarium_public_health.dataset_manager.ArtifactManagerInterface"
+
+components:
+    vivarium_public_health:
+        population:
+            - BasePopulation()
+            - Mortality()
+            - FertilityCrudeBirthRate()
+        disease.models:
+            - SIR_fixed_duration("measles", "10")
+            - SIS("diarrheal_diseases")
+            - SIS("lower_respiratory_infections")
+        risks:
+            - Risk("risk_factor.vitamin_a_deficiency")
+            - RiskEffect("risk_factor.vitamin_a_deficiency", "cause.measles.incidence_rate")
+            - RiskEffect("risk_factor.vitamin_a_deficiency", "cause.diarrheal_diseases.incidence_rate")
+            - RiskEffect("risk_factor.vitamin_a_deficiency", "cause.lower_respiratory_infections.incidence_rate")
+            - Risk("coverage_gap.lack_of_vitamin_a_supplementation")
+            - RiskEffect("coverage_gap.lack_of_vitamin_a_supplementation", "risk_factor.vitamin_a_deficiency.exposure_parameters")
+        metrics:
+            - MortalityObserver()
+#            - Disability()
+            - DisabilityObserver()
+            - CategoricalRiskObserver('risk_factor.vitamin_a_deficiency')
+    vivarium_conic_vitamin_a_supp.components:
+        - MagicWandSupplementationInterventionStepWise()
+        - SupplementedDaysObserver()
+
+
+configuration:
+    input_data:
+        location: Nigeria
+        input_draw_number: 0
+#         artifact_path: /share/costeffectiveness/artifacts/vitamin_a_supp/nigeria.hdf
+        artifact_path: /Users/akannan/Desktop/IHME/vit_a_artifacts/nigeria.hdf
+    interpolation:
+        order: 0
+        extrapolate: True
+    randomness:
+        map_size: 1_000_000
+        key_columns: ['entrance_time']
+        random_seed: 0
+    time:
+        start:
+            year: 2017
+            month: 1
+            day: 1
+        end:
+            year: 2017 # 2023
+            month: 12
+            day: 31
+        step_size: 1  # Days
+    population:
+        population_size: 100_000
+        age_start: 0
+        age_end: 5
+        exit_age: 5
+    lack_of_vitamin_a_supplementation:
+        exposure: 0.68 # GBD: 0.36
+        distribution: 'dichotomous'
+    vitamin_a_supplementation:
+        target_coverage: 0.32 # Intervention: 0.66
+        intervention_start_year: 2017 # 2019
+        intervention_end_year: 2017 # 2023
+
+    effect_of_lack_of_vitamin_a_supplementation_on_vitamin_a_deficiency:
+        exposure_parameters:
+            log_mean: 0.391875175
+            log_se: 0.174420595
+            tau_squared: 0.072460874
+    metrics:
+        disability:
+            by_age: True # False
+            by_sex: True # False
+            by_year: True # False
+        mortality:
+            by_age: True # False
+            by_sex: True # False
+            by_year: True
+        supplemented_days:
+            by_age: False
+            by_sex: False
+            by_year: True
