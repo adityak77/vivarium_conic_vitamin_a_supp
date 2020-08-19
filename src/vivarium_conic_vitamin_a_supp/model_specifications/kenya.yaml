@@ -34,8 +34,8 @@ configuration:
     input_data:
         location: Kenya
         input_draw_number: 0
-#        artifact_path: /share/costeffectiveness/artifacts/vitamin_a_supp/kenya.hdf
-        artifact_path: /Users/akannan/Desktop/IHME/vit_a_artifacts/kenya.hdf
+        artifact_path: /share/costeffectiveness/artifacts/vitamin_a_supp/kenya.hdf
+#        artifact_path: /Users/akannan/Desktop/IHME/vit_a_artifacts/kenya.hdf
     interpolation:
         order: 0
         extrapolate: True
@@ -54,7 +54,7 @@ configuration:
             day: 31
         step_size: 1  # Days
     population:
-        population_size: 10_000
+        population_size: 100_000
         age_start: 0
         age_end: 5
         exit_age: 5
@@ -62,9 +62,9 @@ configuration:
         exposure: 0.45
         distribution: 'dichotomous'
     vitamin_a_supplementation:
-        target_coverage: 0.55
-        intervention_start_year: 2017 # 2019
-        intervention_end_year:  2017 # 2023
+        target_coverage: 0.55 # Intervention: 0.77 Baseline: 0.55
+        intervention_start_year: 2019 # 2017
+        intervention_end_year:  2023 # 2017
 
     effect_of_lack_of_vitamin_a_supplementation_on_vitamin_a_deficiency:
         exposure_parameters:
@@ -73,12 +73,12 @@ configuration:
             tau_squared: 0.072460874
     metrics:
         disability:
-            by_age: True # False
-            by_sex: True # False
+            by_age: False
+            by_sex: False
             by_year: True # False
         mortality:
-            by_age: True # False
-            by_sex: True # False
+            by_age: False
+            by_sex: False
             by_year: True
         supplemented_days:
             by_age: False
