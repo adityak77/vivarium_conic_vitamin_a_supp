@@ -35,8 +35,8 @@ configuration:
     input_data:
         location: Nigeria
         input_draw_number: 0
-        artifact_path: /share/costeffectiveness/artifacts/vitamin_a_supp/nigeria.hdf
-#        artifact_path: /Users/akannan/Desktop/IHME/vit_a_artifacts/nigeria.hdf
+#        artifact_path: /share/costeffectiveness/artifacts/vitamin_a_supp/nigeria.hdf
+        artifact_path: /Users/akannan/Desktop/IHME/vit_a_artifacts/nigeria.hdf
     interpolation:
         order: 0
         extrapolate: True
@@ -50,7 +50,7 @@ configuration:
             month: 1
             day: 1
         end:
-            year: 2023 # 2017
+            year: 2017 # 2023
             month: 12
             day: 31
         step_size: 1  # Days
