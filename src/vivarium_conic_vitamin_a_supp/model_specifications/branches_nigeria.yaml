@@ -1,5 +1,5 @@
-input_draw_count: 1000
-random_seed_count: 1
+input_draw_count: 100
+random_seed_count: 10
 
 branches:
   - vitamin_a_supplementation:
