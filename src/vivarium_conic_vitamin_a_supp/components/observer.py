@@ -51,7 +51,7 @@ class SupplementedDaysObserver:
         current_supplemented_pop = pop.loc[current_lack_of_supplementation_exposure == 'cat2']
 
         config = self.config.to_dict().copy()
-        base_filter = QueryString(f'alive == "alive"')
+        base_filter = QueryString(f'alive == "alive" and tracked')
         base_key = get_output_template(**config).substitute(measure=self.measure_name, year=event.time.year)
         current_supplemented_count = get_group_counts(current_supplemented_pop, base_filter, base_key,
                                               config, self.age_bins)
