@@ -1,6 +1,0 @@
-input_draw_count: 100
-random_seed_count: 1
-
-branches:
-  - vitamin_a_supplementation:
-    target_coverage: [0.32, 0.66]
